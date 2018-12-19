@@ -23,36 +23,47 @@ Things you may want to cover:
 
 * ...
 
-## membersテーブル
-create_table :menbers
+## usersテーブル
+create_table :users
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id |integer|null: false, foreign_key: false|
-|userneme|string |null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|id   |integer|null: false, foreign_key: false|
+|neme |string |null: false, foreign_key: true|
+|email|integer|null: false, foreign_key: true|
 
-## groupテーブル
-create_table :group
+## groupsテーブル
+create_table :groups
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id |integer|null: false, foreign_key: false|
-|groupname|integer|null: false, foreign_key: true|
+|id  |integer|null: false, foreign_key: false|
+|name|integer|null: false, foreign_key: true|
 
 ## messagesテーブル
 create_table :messages
 
 |Column|Type|Options|
 |------|----|-------|
-|messages_id|integer|null: false, foreign_key: false|
-|body       |text   |null: false, foreign_key: true|
-|image      |string |null: false, foreign_key: true|
-|group_id   |integer|null: false, foreign_key: true|
-|user_id    |integer|null: false, foreign_key: true|
+|id      |integer|null: false, foreign_key: false|
+|body    |text   |null: false, foreign_key: true|
+|image   |string |null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id |integer|null: false, foreign_key: true|
 
-### Association
-- belongs_to :group
-- belongs_to :users
+## users_groups中間テーブル
+create_table :users_groups
+
+|users|groups|
+|-----|------|
+|user_id|group_id|
+
+### Association users
+- has_many :groups
 - has_many :massages
 
+### Association groups
+- has_many :users
+
+### Association messages
+- belongs_to :users
