@@ -28,42 +28,53 @@ create_table :users
 
 |Column|Type|Options|
 |------|----|-------|
-|id   |integer|null: false, foreign_key: false|
-|neme |string |null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
+|neme |string |null: false|
+|email|integer|null: false|
+
+### Association users
+- has_many :users_groups
+- has_many :groups,through: :group_users
+- has_many :massages
+
 
 ## groupsテーブル
 create_table :groups
 
 |Column|Type|Options|
 |------|----|-------|
-|id  |integer|null: false, foreign_key: false|
-|name|integer|null: false, foreign_key: true|
+|name|integer|null: false|
+
+### Association groups
+- has_many :users_groups
+- has_many :users,through: :group_users
+
 
 ## messagesテーブル
 create_table :messages
 
 |Column|Type|Options|
 |------|----|-------|
-|id      |integer|null: false, foreign_key: false|
-|body    |text   |null: false, foreign_key: true|
-|image   |string |null: false, foreign_key: true|
+|body    |text   |null: false|
+|image   |string ||
 |group_id|integer|null: false, foreign_key: true|
 |user_id |integer|null: false, foreign_key: true|
+
+### Association messages
+- belongs_to :user
+- belongs_to :group
+
 
 ## users_groups中間テーブル
 create_table :users_groups
 
-|users|groups|
-|-----|------|
-|user_id|group_id|
-
-### Association users
-- has_many :groups
-- has_many :massages
-
-### Association groups
-- has_many :users
+|Column|Type|Options|
+|------|----|-------|
+|user_id |references|null: false,foreign_key: true       |
+|group_id|references|null: false,foreign_key: true       |
 
 ### Association messages
-- belongs_to :users
+- belongs_to :user
+- belongs_to :group
+
+
+
