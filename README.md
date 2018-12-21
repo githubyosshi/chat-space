@@ -28,12 +28,12 @@ create_table :users
 
 |Column|Type|Options|
 |------|----|-------|
-|neme |string |null: false|
+|neme |string |null: false,add_index|
 |email|integer|null: false|
 
 ### Association users
 - has_many :users_groups
-- has_many :groups,through: :group_users
+- has_many :groups,through: :users_groups
 - has_many :massages
 
 
@@ -46,7 +46,7 @@ create_table :groups
 
 ### Association groups
 - has_many :users_groups
-- has_many :users,through: :group_users
+- has_many :users,through: :users_groups
 
 
 ## messagesテーブル
@@ -54,8 +54,8 @@ create_table :messages
 
 |Column|Type|Options|
 |------|----|-------|
-|body    |text   |null: false|
-|image   |string ||
+|body    |text   |null: false                   |
+|image   |string |                              |
 |group_id|integer|null: false, foreign_key: true|
 |user_id |integer|null: false, foreign_key: true|
 
@@ -69,12 +69,9 @@ create_table :users_groups
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id |references|null: false,foreign_key: true       |
-|group_id|references|null: false,foreign_key: true       |
+|user_id |references :user |null: false,foreign_key: true|
+|group_id|references :group|null: false,foreign_key: true|
 
 ### Association messages
 - belongs_to :user
 - belongs_to :group
-
-
-
