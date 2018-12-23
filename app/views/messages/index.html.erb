@@ -1,0 +1,119 @@
+  <!-- <p>Hello World!</p> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>ReviewSpace</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NqX6mcocItAKP/6HPeSibEVhxxyTP3i5htT265G1t40gCHWmn9/2Q2v6cWAQYuAUhVUfmGB2LYvFG/PFTsLxaQ==" />
+<!-- <link rel="stylesheet" media="all" href="/assets/application-c617cd3cc56ea5db583836527c3a19ec935e32bc3e23710c957791a1d7ac6c38.css" /> -->
+<link rel="stylesheet" media="all" href="/assets/stylesheets/application.css" />
+<script src="/javascripts/application.js"></script>
+</head>
+<body>
+<div class='notification'>
+</div>
+
+<div class='chat-side'>
+<div class='chat-side__user'>
+<div class='chat-side__user-content'>
+<div class='chat-side__user-name'>
+吉本
+</div>
+<a class="chat-side__user--new-group" href="/groups/new"><i class='fa fa-pencil-square-o'></i>
+</a><a class="chat-side__user--edit-user" href="/users/edit"><i class='fa fa-cog'></i>
+</a></div>
+</div>
+<div class='chat-side__groups'>
+<div class='chat-side__groups-list'>
+<a href="/groups/1962/messages"><div class='chat-side__group'>
+<div class='chat-side__group-name'>
+車
+</div>
+<div class='chat-side__group-message'>
+ハイブリットが一番
+</div>
+</div>
+</a><a href="/groups/1961/messages"><div class='chat-side__group'>
+<div class='chat-side__group-name'>
+動物
+</div>
+<div class='chat-side__group-message'>
+犬も好き
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class='chat-main'>
+<div class='chat-main__header'>
+<div class='chat-main__header--group clearfix'>
+<div class='chat-main__header--group-name'>
+動物
+</div>
+<a class="chat-main__header--group-edit-btn" href="/groups/1961/edit">edit
+</a></div>
+<div class='chat-main__header-members'>
+MEMBER:
+<i>
+吉本
+</i>
+</div>
+</div>
+<div class='chat-main__body'>
+<div class='chat-main__body--messages-list'>
+<div class='chat-main__message clearfix' data-id='3439'>
+<div class='chat-main__message-name'>
+吉本
+</div>
+<div class='chat-main__message-time'>
+2018/12/19 18:43:51
+</div>
+<div class='chat-main__message-body'>
+犬も好き
+<img class="chat-main__message-body-image" src="" />
+</div>
+</div>
+<div class='chat-main__message clearfix' data-id='3438'>
+<div class='chat-main__message-name'>
+吉本
+</div>
+<div class='chat-main__message-time'>
+2018/12/19 18:43:15
+</div>
+<div class='chat-main__message-body'>
+鳥
+<img class="chat-main__message-body-image" src="" />
+</div>
+</div>
+<div class='chat-main__message clearfix' data-id='3428'>
+<div class='chat-main__message-name'>
+吉本
+</div>
+<div class='chat-main__message-time'>
+2018/12/19 16:17:56
+</div>
+<div class='chat-main__message-body'>
+好きな動物
+<img class="chat-main__message-body-image" src="" />
+</div>
+</div>
+
+</div>
+</div>
+<div class='chat-main__footer'>
+<form class="chat-main__footer-form" id="new_message" enctype="multipart/form-data" action="/groups/1961/messages" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="GviPT2extAy9klr4blFpsYu/yIJUUpWHHVyurSMEQl4MVQBwMnJgn9xX1R9D1yvJS4sQBqcbwLVek6uD/HMEug==" /><div class='chat-main__footer-body'>
+<input placeholder="type a message" class="message" type="text" name="message[body]" id="message_body" />
+<label class="chat-file" for="message_image"><input class="image" type="file" name="message[image]" id="message_image" />
+<i class='fa fa-image'></i>
+</label></div>
+<input type="submit" name="commit" value="Send" class="submit" data-disable-with="Send" />
+</form>
+</div>
+</div>
+
+</body>
+</html>
