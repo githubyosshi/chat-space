@@ -1,54 +1,51 @@
 .wrapper
 
-  = render 'shared/side_bar'
+  = render 'messages/shared/side_bar'
 
   .chat
     .header
       .left-header
         .left-header__title
-          グループ名
+          明細タイトル_Aグループ
         %ul.left-header__members
           Member：
           %li.member
-            メンバー名
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
+          明細タイトル_メンバー１
       .right-header
         .right-header__button
           Edit
+      .cb
     .messages
       .message
         .upper-message
           .upper-message__user-name
-            メンバー
+            明細メンバー１
           .upper-message__date
-            2017/04/04
+            2017/04/05
         .lower-meesage
           .lower-message__content
-            メッセージ
+            明細メッセージ１
       .message
         .upper-message
           .upper-message__user-name
-            メンバー
+            明細メンバー２
           .upper-message__date
-            2017/04/04
+            2017/04/06
         .lower-meesage
           .lower-message__content
-            メッセージ
+            明細メッセージ２
       .message
         .upper-message
           .upper-message__user-name
-            メンバー
+            明細メンバー３
           .upper-message__date
-            2017/04/04
+            2017/04/07
         .lower-meesage
           .lower-message__content
-            メッセージ
+            明細メッセージ３
     .form
       %form
-        %input.form__message
+        %input.form__message{placeholder:'type a message'}
         .form__mask
           %label.form__mask__image
             = fa_icon 'picture-o', class: 'icon'
