@@ -1,53 +1,34 @@
 .chat {
-  // box-sizing: border-box;
   height: 100%;
-  // width: calc(100% - 100px);
   width: calc(100vw - 300px);
-  // display: inline-block;
   float: left;
-  // .clear {
-  //   clear: both;
-  // }
   .header {
     display: inline-block;
-    // box-sizing: border-box;
     height: 150px;
-
-    // height: 15%;
-    // float: left;
     margin: 0 40px;
     margin-top: 0px;
     margin-right: 40px;
     margin-bottom: 0px;
     margin-left: 40px;
-
     width: 100%;
-    // padding: 0 40px;
     .left-header {
      display: inline-block;
-      // float: left;
       &__title {
         color: #333333;
         font-size: 20px;
         margin-top: 35px;
       }
       &__members {
-            // display: inline-block;
-        // color: #999;
         color: #999999;
         display: flex;
         font-size: 12px;
         margin-top: 15px;
         .member {
-
-          // display: inline-block;
           padding-right: 5px;
         }
       }
     }
     .right-header {
-      // clear: both;
-          // display: inline-block;
       border: 1px solid $light_blue;
       color: $light_blue;
       float: right;
@@ -58,28 +39,14 @@
       margin-right: 100px;
     }
   }
-
-  // .cb {
-  //   clear: both;
-  // }
-
   .messages {
-    // display: inline-block;
     overflow: scroll;
-      // float: left;
     background-color: #FAFAFA;
-    // background-color: #434A54;
     box-sizing: border-box;
     padding: 46px 40px 0;
     height: calc(100vh - 150px - 90px);
-    // width: calc(100vh - 100px);
     .message {
-      // overflow: hidden;
-        // overflow: scroll;
       .upper-message {
-        // float: left;
-        // overflow: hidden;
-        // 並列
         display: flex;
         &__user-name {
           color: #434a54;
@@ -93,7 +60,6 @@
         }
       }
       .lower-message {
-        // overflow: hidden;
         margin-top: 10px;
         &__content {
           color: #434a54;
@@ -106,8 +72,6 @@
 
   .form {
     display: inline-block;
-    // overflow: hidden;
-    // float: left;
     width: 100%;
     background-color: #DDDDDD;
     box-sizing: border-box;
@@ -118,11 +82,9 @@
       float: left;
       height: 50px;
       width: 90%;
-      // width: calc(100% - 150px);
     }
     &__mask {
       background-color: $white;
-      // display: inline-block;
       float: left;
       height: 50px;
       padding-right: 10px;
