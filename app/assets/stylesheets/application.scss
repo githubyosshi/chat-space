@@ -1,9 +1,11 @@
 @import "font-awesome";
 @import "config/colors";
+@import "modules/flash";
 @import "config/fontsize";
 @import "config/reset";
 @import "messages/messages";
 @import "mixins/mixin";
 @import "mixins/vendor_prefix";
 @import "modules/chat";
+@import "modules/user";
 @import "modules/side_bar";
