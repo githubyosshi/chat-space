@@ -13,17 +13,23 @@
           = fa_icon 'cog', class: 'icon'
   .groups
     .group
-      .group__name
-        Aグループ
-      .group__message
-        新着メッセージ１
-    .group
-      .group__name
-        Bグループ
-      .group__message
-        新着メッセージ２
-    .group
-      .group__name
-        Cグループ
-      .group__message
-        新着メッセージ３
+    /   .group__name
+    /     Aグループ
+    /   .group__message
+    /     新着メッセージ１
+    / .group
+    /   .group__name
+    /     Bグループ
+    /   .group__message
+    /     新着メッセージ２
+    / .group
+    /   .group__name
+    /     Cグループ
+    /   .group__message
+    /     新着メッセージ３
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
