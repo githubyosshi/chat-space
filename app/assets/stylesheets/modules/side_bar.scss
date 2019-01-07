@@ -4,11 +4,14 @@
   color: $white;
   width: 300px;
   height: 100%;
+  background-color: $side_blue_light;
   .header {
     background-color: $side_blue_dark;
-    height: 110px;
+    // height: 110px;
+    height: 100px;
     line-height: 100px;
-    padding: 20px 20px;
+    // padding: 20px 20px;
+    padding: 0px 20px;
     &__name {
       display: inline-block;
       font-size: $side_header_font;

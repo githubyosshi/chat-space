@@ -9,40 +9,16 @@
           = @group.name
         %ul.left-header__members  member:
         - @group.users.each do |user|
-          %li.member
+          .member
             = user.name
       .right-header
         .right-header__button
           = link_to "Edit", edit_group_path(@group), class: 'right-header__button__inside'
       .cb
+
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            明細メンバー１
-          .upper-message__date
-            2017/04/05
-        .lower-meesage
-          .lower-message__content
-            明細メッセージ１
-      .message
-        .upper-message
-          .upper-message__user-name
-            明細メンバー２
-          .upper-message__date
-            2017/04/06
-        .lower-meesage
-          .lower-message__content
-            明細メッセージ２
-      .message
-        .upper-message
-          .upper-message__user-name
-            明細メンバー３
-          .upper-message__date
-            2017/04/07
-        .lower-meesage
-          .lower-message__content
-            明細メッセージ３
+      = render @messages
+
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
