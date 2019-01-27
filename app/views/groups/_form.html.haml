@@ -15,7 +15,7 @@
       = f.label :search, "チャットメンバーを追加", class: "chat-group-form__label", for: "user-search-field"
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-      = text_field_tag :search, "", class: "chat-group-form__input", id: "user-search-field", placeholder: "追加したいユーザー名を入力してください"
+      %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
 
       #user-search-result
 
@@ -25,13 +25,12 @@
     .chat-group-form__field--right
       #chat-group-users
         .chat-group-user.clearfix
-          = label_tag :search, "", class: "chat-group-user__name", id: "group[user_ids][]" , value: "current_user.id"
-          %p.chat-group-user__name
-
+          = f.hidden_field :user, :value => "current_user.id"
         - @group.users.each do |user|
           .chat-group-user.clearfix
-            = label_tag :search, "", class: "chat-group-user__name", id: "group[user_ids][]" , value: "user.id"
+            = f.hidden_field :user, :value => "user.id"
             %p.chat-group-user__name
+
             = user.name
             %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
 
