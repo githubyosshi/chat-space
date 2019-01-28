@@ -27,7 +27,7 @@
         .chat-group-user.clearfix
           = f.hidden_field :user, value: current_user.id
         - @group.users.each do |user|
-          =render partial: "layouts/users", locals: {user: user, f: f}
+          = render partial: "users/user", locals: {user: user, f: f}
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

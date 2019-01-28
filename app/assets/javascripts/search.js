@@ -2,7 +2,6 @@ $(function() {
 
   var search_list = $("#user-search-result");
 
-// 以下、検索結果の表示に関する記述
   function appendUserName(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
@@ -18,9 +17,8 @@ $(function() {
     search_list.append(html);
   }
 
-// 以下、user検索欄に入力後の挙動に関する記述
   $("#user-search-field").on("keyup", function(e) {
-    e.preventDefault();       //キャンセル可能なイベントをキャンセル
+    e.preventDefault();
     var input = $("#user-search-field").val();
 
       $.ajax({
@@ -48,9 +46,8 @@ $(function() {
       })
   });
 
-
   var search_list_add = $("#chat-group-users");
-// 以下、追加されたチャットメンバー欄の表示に関する記述
+
   function appendUserNameAdd(user_name, user_id) {
      var html =`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
@@ -60,7 +57,6 @@ $(function() {
       search_list_add.append(html);
   }
 
-// 以下、追加ボタンの挙動に関する記述
   $("#user-search-result").on("click", ".chat-group-user__btn--add", function () {
     var user_name = $(this).data("user-name");
     var user_id = $(this).data("user-id");
@@ -68,7 +64,6 @@ $(function() {
     $(this).parent().remove();
   });
 
-// 以下、削除ボタンの挙動に関する記述
   $("#chat-group-users").on("click", ".js-remove-btn", function () {
     $(this).parent().remove();
   });
