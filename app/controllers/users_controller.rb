@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
 
   def edit
+    @user = User.find(params[:id])
   end
 
-  # def index
-  # end
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:name]}%").where.not(id: current_user)
+    respond_to do |format|
+      format.json
+    end
+  end
 
   def update
     if current_user.update(user_params)

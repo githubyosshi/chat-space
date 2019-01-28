@@ -5,14 +5,8 @@
   .header {
     box-sizing: border-box;
     height: 100px;
-    // padding: 0 40px;
     display: inline-block;
-    // height: 150px;
     margin: 0 40px;
-    // margin-top: 0px;
-    // margin-right: 40px;
-    // margin-bottom: 0px;
-    // margin-left: 40px;
     width: 100%;
     .left-header {
      display: inline-block;
@@ -25,11 +19,17 @@
         color: #999999;
         display: flex;
         font-size: 12px;
+        margin-top: 15px;
         float: left;
-        .member {
-          padding-right: 5px;
-        }
       }
+        .member {
+        color: #999999;
+        float: left;
+        display: inline-block;
+        font-size: 12px;
+        padding-right: 5px;
+        margin-top: 15px;
+        }
     }
     .right-header {
       border: 1px solid $light_blue;
