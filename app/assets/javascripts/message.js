@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
-    var html = `<div class=message>
+    var html = `<div class=message data-id="${message.id}">
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                       ${message.user_name}
@@ -61,6 +61,7 @@ $(function(){
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
       var message_id = $('.message').last().data('id');
+
       $.ajax({
         url: location.href,
         type: "GET",
