@@ -20,6 +20,10 @@ $(function(){
     return html;
   }
 
+  function scrollToNewestMessage() {
+    $('.chat .messages').animate({scrollTop: $('.chat .messages')[0].scrollHeight},'fast')
+    }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,14 +42,45 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
 
-     $( ".form__submit").prop( "disabled", false );
-     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-     $('.form__message').val('');
-     $('.hidden').val('');
-    })
+      $( ".form__submit").prop( "disabled", false );
+      scrollToNewestMessage()
+      $('.form__message').val('');
+      $('.hidden').val('');
+     })
 
-   .fail(function(){
+    .fail(function(){
       alert('送信失敗');
     })
   })
+
+
+  function scrollToNewestMessage() {
+    $('.chat .messages').animate({scrollTop: $('.chat .messages')[0].scrollHeight},'fast')
+   }
+  $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+
+  var interval = setInterval(function() {
+    if (location.href.match(/\/groups\/\d+\/messages/)){
+      var message_id = $('.message').last().data('id');
+      $.ajax({
+        url: location.href,
+        type: "GET",
+        data: {id: message_id},
+        dataType: "json"
+      })
+      .done(function(data){
+        data.forEach(function(message){
+          var html = buildHTML(message);
+          $('.messages').append(html);
+          scrollToNewestMessage()
+        })
+      })
+      .fail(function(data){
+        alert('自動更新に失敗')
+        $('.form__submit').prop('disabled', false);
+      });
+    } else {
+       clearInterval(interval);
+    }
+  }, 5000 );
 });
