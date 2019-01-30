@@ -38,14 +38,13 @@ $(function(){
       contentType: false
     })
 
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.messages').append(html);
-
-      $( ".form__submit").prop( "disabled", false );
-      scrollToNewestMessage()
-      $('.form__message').val('');
-      $('.hidden').val('');
+    .done(function(new_message){
+      var html = buildHTML(new_message);
+      $('#new_message')[0].reset();
+        $('.messages').append(html);
+        $('.form__submit').prop( 'disabled', false );
+        $('.form__message').val('');
+        scrollToNewestMessage()
      })
 
     .fail(function(){
