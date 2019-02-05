@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'us-east-1'
   }
 
-  config.fog_directory  = 'upload-test-ams'
-  config.asset_host = 'https://s3.console.aws.amazon.com/s3/buckets/upload-test-am'
+  config.fog_directory  = 'upload-test-ams2'
+  config.asset_host = 'https://s3-us-east-1.amazonaws.com/upload-test-ams2'
 end
